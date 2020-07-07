@@ -1,0 +1,12 @@
+body{
+    background: url("/images/regbackground.jpg");
+    background-size: cover;
+}
+ .inputBox{
+    text-align:left;
+    color: white;
+}
+.inputBox input{
+    width:500px;
+    height: 30px;
+}

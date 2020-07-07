@@ -1,0 +1,144 @@
+/* Style the navbar */
+#navbar {
+
+    /* To fully stretch navbar */
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+    z-index: 1;
+
+    animation-name: navbarSlideIn;
+    animation-duration: 1s;
+
+    /* Casts shadow */
+    -moz-box-shadow:        0 3px 5px 6px #595959;
+    -webkit-box-shadow:     0 3px 5px 6px #595959;
+    box-shadow:             0 3px 5px 6px #595959;
+}
+
+/* Navbar links */
+#navbar h1 {
+    margin: 0;
+
+    /* Aligns at center */
+    position: absolute;
+    left: 3vh;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    display: block;
+    color: #333333;
+    font-family: Verdana, sans-serif;
+    font-size: 3.2vh;
+}
+
+#navbar #menu{
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 30%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/index-bg1.jpg") no-repeat fixed center; */
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#menu-container {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 7vh;
+    right: 7vh;
+    background-color: white;
+    width: fit-content;
+    border-radius: 5px;
+    z-index: 2;
+
+    animation-name: slideRTL;
+    animation-duration: 0.3s;
+
+    -moz-box-shadow:        0 0 3px 1px #595959;
+    -webkit-box-shadow:     0 0 3px 1px #595959;
+    box-shadow:             0 0 3px 1px #595959;
+}
+
+#menu-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-container ul li {
+    padding: 1.6vh;
+    min-width: 20vh;
+    font-size: 1.8vh;
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer;
+}
+
+#display-area {
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+
+    animation-name: dispSlideIn;
+    animation-duration: 1s;
+}
+
+#status-bar {
+    padding: 16px;
+    overflow: scroll;
+    white-space: nowrap;
+    background-color: white;
+}
+
+#status-bar ul {
+    display: inline-block;
+    vertical-align: top;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#status-bar ul a {
+    padding: 1vh;
+    display: block;
+    color: #707070;
+    min-width: 20vh;
+    font-size: 1.8vh;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#status-bar ul a:hover {
+    color: black;
+}
+
+.disparea-child {
+    width: auto;
+    min-height: 400px;
+    text-align: center;
+    padding: 150px;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#pane1 {
+    background-image: url("../images/index-bg1.jpg");
+}
+#pane2 {
+    background-image: url("../images/index-bg2.jpg");
+}
+#pane3 {
+    background-image: url("../images/index-bg1.jpg");
+}
+#pane4 {
+    background-image: url("../images/index-bg2.jpg");
+}
