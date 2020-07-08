@@ -33,6 +33,16 @@
     font-size: 3.2vh;
 }
 
+#navbar .user-name{
+    position: absolute;
+    right: 78px;
+    top: 48%;
+    transform: translate(0, -50%);
+    height: 30%;
+    font-size: 2.2vh;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 #navbar #menu{
     position: absolute;
     right: 32px;

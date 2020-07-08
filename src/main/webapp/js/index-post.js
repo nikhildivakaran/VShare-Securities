@@ -27,7 +27,10 @@ menuItems.addEventListener("mouseout",function(event) {
 menuItems.addEventListener("click",function(event) {
     switch (event.target.id) {
         case "login-button":
-            window.open("/login", "_top");
+            window.open("/loginPage", "_top");
+            break;
+        case "logout-button":
+            window.open("/logout", "_top");
             break;
         case "sign-up-button":
             window.open("/register", "_top");

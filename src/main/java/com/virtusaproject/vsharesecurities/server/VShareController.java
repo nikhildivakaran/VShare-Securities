@@ -1,5 +1,6 @@
 package com.virtusaproject.vsharesecurities.server;
 
+import com.virtusaproject.vsharesecurities.database.UserData;
 import com.virtusaproject.vsharesecurities.services.UsersService;
 import com.virtusaproject.vsharesecurities.dto.UserDto;
 import com.virtusaproject.vsharesecurities.exceptions.UserAlreadyExistException;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.Map;
 
 @RestController
@@ -26,6 +28,17 @@ public class VShareController extends AbstractErrorController {
         super(errorAttributes);
         this.usersService = usersService;
         this.passwordEncoder = passwordEncoder;
+    }
+
+    @GetMapping(value = "/")
+    public ModelAndView root(Principal principal) {
+        if (principal != null) {
+            String userEmail = principal.getName();
+            UserData user = usersService.getUserByEmail(userEmail);
+            return new ModelAndView("/jsp/index.jsp", "user", user);
+        }
+
+        return new ModelAndView("/jsp/index.jsp");
     }
 
     @RequestMapping(value = "/error")
@@ -48,8 +61,8 @@ public class VShareController extends AbstractErrorController {
 
     }
 
-    @GetMapping("/login")
-    public ModelAndView getLoginPage() {
+    @GetMapping("/loginPage")
+    public ModelAndView getLoginPage(HttpServletRequest request) {
         return new ModelAndView("/html/loginpage.html");
     }
 
@@ -60,7 +73,7 @@ public class VShareController extends AbstractErrorController {
 
     @GetMapping("/dashboard")
     public ModelAndView getDashboard() {
-        return new ModelAndView("Hi");
+        return new ModelAndView("/jsp/dashboarda.jsp");
     }
 
     @PostMapping(value = "/register")

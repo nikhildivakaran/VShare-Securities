@@ -17,11 +17,11 @@ import java.util.*;
 
 @Service
 @Transactional
-public class VshareUserDetailsService implements UserDetailsService {
+public class VShareUserDetailsService implements UserDetailsService {
 
     private final UsersRepository usersRepository;
 
-    public VshareUserDetailsService(UsersRepository usersRepository) {
+    public VShareUserDetailsService(UsersRepository usersRepository) {
         this.usersRepository = usersRepository;
     }
 
@@ -29,8 +29,7 @@ public class VshareUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         UserData userData = usersRepository.findByEmail(email);
         if (userData == null) {
-            throw new UsernameNotFoundException(
-                    "No user found with username: "+ email);
+            throw new UsernameNotFoundException("No user found with username: "+ email);
         }
 
         return new User (

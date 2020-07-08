@@ -13,13 +13,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 public class ApplicationConfiguration implements WebMvcConfigurer {
     @Bean
-    public ViewResolver jspViewResolver() {
-        InternalResourceViewResolver bean = new InternalResourceViewResolver();
-        bean.setPrefix("/");
-        return bean;
-    }
-
-    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
